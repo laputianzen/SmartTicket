@@ -13,7 +13,7 @@ Template.SelectConcert.events({
 			console.log(ConcertAddress);
 			buyContractObject = web3.eth.contract(abi);
 			buyContractInstance = buyContractObject.at(ConcertAddress);
-	        BlazeLayout.render('mainLayout', {main: "Buy"});
+	        BlazeLayout.render('mainLayout', {main: "Buyer"});
 
 
 	}   

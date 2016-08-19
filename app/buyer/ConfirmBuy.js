@@ -20,7 +20,7 @@ Template.ConfirmBuy.helpers({
 Template.ConfirmBuy.events({
 	'click .no': function(event){
 		event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "Buy"});
+	        BlazeLayout.render('mainLayout', {main: "Buyer"});
 
 	},
 	'submit form': function(event){
