@@ -1,15 +1,14 @@
 <!-- (5) Confirm Buy -->
 <template name="ConfirmBuy">
-    <h3>Now you are buying BeerNight!</h3>
+    <h3>Now you are buying {{ConcertName}}</h3>
     Your current account balance: 	{{AccountBalance}}<br>
-    Ticket price: 					2 ether<br>
-    Amount: 						<br>
-    Total: 							<br>
+    Ticket price: 					{{TicketPrice}}<br>
+    Amount: 						{{TicketAmount}}<br>
+    Total: 							{{TicketCost}}<br>
     Transaction fee: 				10,0000 gas<br>
-    Account balance after deal: 	whatever<br>
+    Account balance after deal: 	{{RemainingBalance}}<br>
     <form>
-        <input type="text" name="yes">
-        <input type="submit" value="Yes!">
+        <input type="submit" value="confirm">
     </form>
     <button class="no">Cancel</button>
     
