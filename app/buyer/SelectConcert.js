@@ -8,11 +8,11 @@ Template.SelectConcert.events({
 	    },
 	'submit form': function(event){
 			event.preventDefault();
-			 var ConcertAddress = event.target.concertName.value;
+			 var ConcertAddress = event.target.concertAddress.value;
 			Session.set('ConcertInstance',ConcertAddress);
 			console.log(ConcertAddress);
-			selectedBuyContractObject = web3.eth.contract(abi);
-			buyContractInstance = selectedBuyContractObject.at(ConcertAddress);
+			buyContractObject = web3.eth.contract(abi);
+			buyContractInstance = buyContractObject.at(ConcertAddress);
 	        BlazeLayout.render('mainLayout', {main: "Buy"});
 
 
