@@ -8,7 +8,7 @@ Template.PlayerOption.events({
 	    },
 	'click .seller': function(event){
 	    	event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "Sell"});
+	        BlazeLayout.render('mainLayout', {main: "SellerManagement"});
 
 	    },
 	'click .supervisor': function(event){
