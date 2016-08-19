@@ -3,7 +3,7 @@ if (Meteor.isClient) {
 Template.Supervise.events({
 	'click .back': function(event){
 	    	event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "SuperConcert"});
+	        BlazeLayout.render('mainLayout', {main: "PlayerOption"});
 
 	    },
 	'click .yes':function(event){
