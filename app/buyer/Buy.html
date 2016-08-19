@@ -1,12 +1,13 @@
 <!-- (4) Buy -->
 <template name="Buy">
-	<h3>BeerNight!</h3>
-    Host:             Mumin<br>
-    Place:   			Central Park, NYC<br>
-    Start Time: 		2015/7/29 18:00<br>
-    End Time:   		2015/7/29 21:00<br>
-    Ticket Price:       $499<br>
-    Tickets Available:  38<br>
+	<h3>{{ConcertName}}</h3>
+    Host:              {{Host}}<br>
+    Place:   		   {{Place}}<br>
+    Withdrawal Time:   {{WithDrawalDeadline}} <br>
+    Start Time: 	   {{StartTime}}<br>
+    End Time:   	   {{EndTime}}<br>
+    Ticket Price:      {{TicketPrice}}<br>
+    Tickets Available: {{TicketAvailable}}<br>
     <form>
         <input type="text" name="ticketNumber">
         <input type="submit" value="Buy!">
