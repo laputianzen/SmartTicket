@@ -13,7 +13,7 @@ Template.PlayerOption.events({
 	    },
 	'click .supervisor': function(event){
 	    	event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "SuperConcert"});
+	        BlazeLayout.render('mainLayout', {main: "SelectSuperviseConcert"});
 
 	    }, 
 	'click .back': function(event){
