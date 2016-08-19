@@ -1,5 +1,5 @@
 <!-- (4) Buy -->
-<template name="Buy">
+<template name="Buyer">
 	<h3>{{ConcertName}}</h3>
     Host:              {{Host}}<br>
     Place:   		   {{Place}}<br>
@@ -11,7 +11,14 @@
     <form>
         <input type="text" name="ticketNumber">
         <input type="submit" value="Buy!">
-    </form><br>   
+    </form><br> 
+<!--    <form>
+        <input type="text" name="ticketNumber">
+        <input type="submit" value="Withdraw">
+    </form><br> 
+-->
+    <button class="useTicket">Use Ticket</button>
+    <button class="refund">Refund</button>    
     <button class="back">Back</button>
 
 </template>

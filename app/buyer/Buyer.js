@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 // Mumin hack
-Template.Buy.helpers({
+Template.Buyer.helpers({
 	ConcertName: function() {return buyContractInstance.name()},
 	Host: function(){return 'No Stored in Smart Contract';},
 	Place: function(){return buyContractInstance.place()},
@@ -12,12 +12,24 @@ Template.Buy.helpers({
 
 })
 
-Template.Buy.events({
+Template.Buyer.events({
 	'click .back': function(event){
+			console.log(event)
 	    	event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "SelectConcert"});
+	        BlazeLayout.render('mainLayout', {main: "PlayerOption"});
+
+	    },
+	'click .useTicket': function(event){
+	    	event.preventDefault();
+	        BlazeLayout.render('mainLayout', {main: "ConfirmUseTicket"});
 
 	    },   
+	'click .refund': function(event){
+	    	event.preventDefault();
+	        BlazeLayout.render('mainLayout', {main: "ConfirmRefund"});
+
+	    },   
+    	    	       
 	'submit form':function(event){
 		event.preventDefault();
 		//session set a lot of things, not done
@@ -30,7 +42,7 @@ Template.Buy.events({
 		Session.set('TicketPrice',buyContractInstance.ticketPrice().toString());
 		Session.set('TicketAvailable', buyContractInstance.ticketSupply().toString());
 		BlazeLayout.render('mainLayout', {main: "ConfirmBuy"});
-	}
+	},
 });
 
 }
