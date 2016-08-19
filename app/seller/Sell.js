@@ -2,6 +2,7 @@ if (Meteor.isClient) {
 /////////SELL SECTION/////////////
 Template.Sell.events({
 	'click .back': function(event){
+			console.log(event);
 	    	event.preventDefault();
 	        BlazeLayout.render('mainLayout', {main: "PlayerOption"});
 
