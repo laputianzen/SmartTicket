@@ -18,9 +18,17 @@ Template.ConfirmSell.events({
 	        BlazeLayout.render('mainLayout', {main: "Sell"});
 
 	    },
-	    'click .yes': function(event){
+	    //'click .yes': function(event){
+	    'submit form': function(event){	
 	    	event.preventDefault();
 	    	//starting transcation, alert when transaction finished
+	    	var account = web3.eth.accounts[0];
+	    	var password = event.target.password.value;
+	    	if(! web3.personal.unlockAccount(account,password)){
+				alert('Account ' + account + 'cannot unlock');
+			} else {
+				alert('Account unlock!!!');
+			}
 
 	    	smartTicketContractObject = web3.eth.contract(abi);
 	    	/*var currentTime = new Date();
