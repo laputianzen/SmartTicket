@@ -22,7 +22,7 @@ Template.ConfirmSell.events({
 	    	event.preventDefault();
 	    	//starting transcation, alert when transaction finished
 
-	    	buyContract1Object = web3.eth.contract(abi);
+	    	smartTicketContractObject = web3.eth.contract(abi);
 	    	/*var currentTime = new Date();
 	    	var timeBeforeWithdrawDeadLineInMilliSeconds = Math.abs(Session.get('withdrawDeadline')-currentTime);
 
@@ -34,11 +34,11 @@ Template.ConfirmSell.events({
 	    	var timeBeforeEndTimeInMinutes = Math.floor(timeBeforeEndTimeInMilliSeconds/60000);
 			*/
 			var gasEstimate = web3.eth.estimateGas({data: contractCode});
-			alert(gasEstimate);
+			alert("This contract requires " + gasEstimate + " gas to deploy!!!");
 
 			var param1 = {} 
 
-	    	buyContract1Instance = buyContract1Object.new(Session.get('concertName'),Session.get('concertPlace'),
+	    	smartTicketContractInstance = smartTicketContractObject.new(Session.get('concertName'),Session.get('concertPlace'),
 	    		parseInt(Session.get('ticketPrice')),parseInt(Session.get('ticketAmount')),
 	    		
 	    		//timeBeforeWithdrawDeadlineInMinutes, timeBeforeStartTimeInMinutes, timeBeforeEndTimeInMinutes,
