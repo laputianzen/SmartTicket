@@ -1,4 +1,16 @@
 if (Meteor.isClient) {
+
+Template.YourExistingConcert.helpers({
+	ConcertName: function() {return sellContractInstance.name()},
+	Host: function(){return 'No Stored in Smart Contract';},
+	Place: function(){return sellContractInstance.place()},
+	WithDrawalDeadline: function(){return sellContractInstance.withDrawalDeadline()},
+	StartTime: function(){return sellContractInstance.startTime()},
+	EndTime: function(){return sellContractInstance.endTime()},
+	TicketPrice: function(){return sellContractInstance.ticketPrice()},
+	TicketAvailable: function(){return sellContractInstance.ticketSupply()},
+
+});		
 ////////BUY SECTION/////////////
 Template.YourExistingConcert.events({
 	'click .back': function(event){
@@ -20,7 +32,12 @@ Template.YourExistingConcert.events({
 	    	event.preventDefault();
 	        BlazeLayout.render('mainLayout', {main: "GetIncome"});
 
-	    },	     	    
+	    },	
+	'click .cancelConcert': function(event){
+	    	event.preventDefault();
+	        BlazeLayout.render('mainLayout', {main: "CancelConcert"});
+
+	    },	  	         	    
 
 	});
 }

@@ -1,8 +1,17 @@
 <template name="YourExistingConcert">
-	<h3>Now you are managing XXX</h3><br>
+	<h3>Now you are managing {{ConcertName}}</h3><br>
+    Host:              {{Host}}<br>
+    Place:   		   {{Place}}<br>
+    Withdrawal Time:   {{WithDrawalDeadline}} <br>
+    Start Time: 	   {{StartTime}}<br>
+    End Time:   	   {{EndTime}}<br>
+    Ticket Price:      {{TicketPrice}}<br>
+    Tickets Available: {{TicketAvailable}}<br>
+
     	<button class="startConcert">Start Concert</button>
     	<button class="closeConcert">Close Concert</button>
-    	<button class="getIncome">Get Income</button>
+    	<button class="getIncome">Get Income</button> <br>
+    	<button class="cancelConcert">Cancel Concert</button>
         <button class="back">Back</button>
 
 </template>
