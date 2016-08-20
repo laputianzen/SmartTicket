@@ -10,7 +10,7 @@ Template.Buyer.helpers({
 	TicketPrice: function(){return buyContractInstance.ticketPrice()},
 	TicketAvailable: function(){return buyContractInstance.ticketSupply()},
 
-})
+});
 
 Template.Buyer.events({
 	'click .back': function(event){
@@ -30,7 +30,7 @@ Template.Buyer.events({
 
 	    },   
     	    	       
-	'submit form':function(event){
+	'submit .buy':function(event){
 		event.preventDefault();
 		//session set a lot of things, not done
 		Session.set('TicketNumber', event.target.ticketNumber.value);
@@ -42,6 +42,11 @@ Template.Buyer.events({
 		Session.set('TicketPrice',buyContractInstance.ticketPrice().toString());
 		Session.set('TicketAvailable', buyContractInstance.ticketSupply().toString());
 		BlazeLayout.render('mainLayout', {main: "ConfirmBuy"});
+	},
+	'submit .withdraw':function(event){
+		event.preventDefault();
+		Session.set('TicketNumber', event.target.ticketNumber.value);
+		BlazeLayout.render('mainLayout', {main: "ConfirmWithdraw"});
 	},
 });
 
