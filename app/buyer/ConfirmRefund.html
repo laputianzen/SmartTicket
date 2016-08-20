@@ -1,17 +1,12 @@
 <!-- (5) Confirm Buy -->
 <template name="ConfirmRefund">
-    <!--- <h3>Now you are buying {{ConcertName}}</h3>
-    Your current account balance: 	{{AccountBalance}}<br>
-    Ticket price: 					{{TicketPrice}}<br>
-    Amount: 						{{TicketAmount}}<br>
-    Total: 							{{TicketCost}}<br>
-    Transaction fee: 				10,0000 gas<br>
-    Account balance after deal: 	{{RemainingBalance}}<br>
-    -->
+    <h3>Now you are in {{ConcertName}}</h3>
+    Are you sure to get your refund now? <br>
     <form>
+        Password: <input type="password" name="password" value="">
         <input type="submit" value="confirm">
     </form>
-    <button class="no">Cancel</button>
+    <button class="back">back</button>
     
 
 </template>
