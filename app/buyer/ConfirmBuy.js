@@ -25,15 +25,40 @@ Template.ConfirmBuy.events({
 	},
 	'submit form': function(event){
 	    event.preventDefault();
+	    var account = web3.eth.accounts[2];
+	    var password = event.target.password.value;
+	    //console.log(password);
 	    /////its two in this case 
-	    var price = event.target.ticketNumber.value * Session.get('TicketPrice');
-	    //console.log(price);
+	    var ticketWant = parseInt(Session.get('TicketNumber'));
+	    var ticketPrice = parseInt(Session.get('TicketPrice'));
+	    //console.log(ticketWant);
 	    //starting transcation, alert when transaction finished
-	    var Cost = web3.toWei(price, "ether");
-	    web3.eth.sendTransaction({from: web3.eth.accounts[0], to: Session.get('ConcertInstance'), value: Cost});
-	    //buyContractInstance.buyTicket(template.find('input').value, {from: web3.eth.accounts[0], gas: 100000});
-	    	
-	    alert("Buy success!");
+	    //web3.eth.sendTransaction({from: web3.eth.accounts[0], to: Session.get('ConcertInstance'), value: Cost});
+	    if(! web3.personal.unlockAccount(account,password)){
+			alert('Account ' + account + 'cannot unlock');
+		} else {
+			alert('Account unlock!!!');
+		}
+	    buyContractInstance.buyTicket(ticketWant, {from: account, value: web3.toWei(ticketWant*ticketPrice,"ether"), gas: 100000}, //function(error,log){
+//	    	if (!error) {
+//	    		var ticketBuyed = buyContractInstance.balanceOfTickets(account);	
+//	    		alert("Buy " + ticketBuyed + " ticket!");
+//	    	}
+
+	    //}
+	    );
+	    buyContractInstance.MoneyTransfer({},{address:account}).watch(function(error, log){
+	    	if (!error) {
+	    		var ticketBuyed = buyContractInstance.balanceOfTickets(account);
+	    		//console.log(log.args.backer);
+
+	    		//alert("buyer " log.args.backer " buy " + ticketBuyed + " ticket!\n");
+	    		alert("You buyed " + ticketBuyed + " ticket!\n");
+	    	}
+	    });
+	    //alert(buyContractInstance.balanceOfTickets(web3.eth.accounts[0]));
+
+
       	BlazeLayout.render('mainLayout', {main: "Home"});}
 
 });
