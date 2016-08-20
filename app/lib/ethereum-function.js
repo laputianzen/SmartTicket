@@ -7,3 +7,13 @@
     }
 });
 */
+
+/*
+var unlockAccount = function(account, password) {
+	if(! web3.personal.unlockAccount(account,password)){
+		alert('Account ' + account + 'cannot unlock');
+	} else {
+		alert('Account unlock!!!');
+	}
+}
+*/
