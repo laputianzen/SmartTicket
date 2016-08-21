@@ -12,11 +12,11 @@ if (Meteor.isClient) {
 
 	    	sellContractInstance.cancelConcert({},{from: account, gas: 100000});
 	        
-	        /*sellContractInstance.CancelConcert({},{address:account}).watch(function(error, log){
+	        sellContractInstance.CancelConcert({},{address:account}).watch(function(error, log){
 	    		if (!error) {
-	    			alert("Contract " + log.args.thisContract + "is " log.args.stateName " \n");
+	    			alert("Contract " + log.args.thisConcert + "is " + log.args.stateName + " \n");
 	    		}
-	    	});*/
+	    	});
 	        BlazeLayout.render('mainLayout', {main: "Home"});
 
 	    },

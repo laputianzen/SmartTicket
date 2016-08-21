@@ -2,7 +2,7 @@ if (Meteor.isClient) {
 
 Template.YourExistingConcert.helpers({
 	ConcertName: function() {return sellContractInstance.name()},
-	Host: function(){return 'No Stored in Smart Contract';},
+	Host: function(){return sellContractInstance.host();},
 	Place: function(){return sellContractInstance.place()},
 	WithDrawalDeadline: function(){return sellContractInstance.withDrawalDeadline()},
 	StartTime: function(){return sellContractInstance.startTime()},

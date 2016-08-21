@@ -21,12 +21,11 @@ Template.UseTicket.events({
 		}
 
 		buyContractInstance.useTicket({},{from: account, gas: 100000});
-/*		buyContractInstance.TicketVerified({},{address:account}).watch(function(error, log){
+		buyContractInstance.TicketVerified({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		alert("You have " + buyContractInstance.balanceOfTickets(account) + " ticket left. \n");
 	    	}
 	    });
-*/
 	},
 });
 

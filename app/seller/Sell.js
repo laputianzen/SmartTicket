@@ -17,7 +17,8 @@ Template.Sell.events({
 			var ticketAmount = event.target.ticketAmount.value;
 			var ticketPrice = event.target.ticketPrice.value;
 			var supervisor = event.target.supervisor.value;
-			var intro = event.target.intro.value;
+			var hostName = event.target.hostName.value;
+			var extraInfo = event.target.extraInfo.value;
 			//session.set a shit load of things
 			//Not fini
 
@@ -29,7 +30,8 @@ Template.Sell.events({
 			Session.set('ticketAmount',ticketAmount);
 			Session.set('ticketPrice',ticketPrice);
 			Session.set('supervisor',supervisor);
-			Session.set('intro',intro);
+			Session.set('hostName',hostName)
+			Session.set('extraInfo',extraInfo);
 
 		    BlazeLayout.render('mainLayout', {main: "ConfirmSell"});
 

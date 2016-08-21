@@ -21,17 +21,15 @@ Template.GetIncome.events({
 		}
 
 		sellContractInstance.getIncome({},{from: account, gas: 100000});
-/*		sellContractInstance.GetIncome({},{address:account}).watch(function(error, log){
+		sellContractInstance.GetIncome({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		var sellContractAddress = sellContractInstnace.address
-	    		alert("You sold " + log.args.soldTickets + " tickets \n" +
-	    		"Total " sellConcertInstance.balanceOfTickets(sellContractAddress) + "tickets is used!\n" +
-	    		"Claim " log.args.amount + " ether \n" +
-	    		"Your event is " + logs.args.stateName + "now.\n"
-	    		);
+	    		alert("You sold " + log.args.ticketSold + " tickets \n" +
+	    		"Total " + log.args.totalTicketUsed + "tickets is used!\n" +
+	    		"Claim " + log.args.contractBalance + " ether \n" +
+	    		"Your event is Inactive now.\n");
 	    	}
 	    });
-*/
 	},
 });
 

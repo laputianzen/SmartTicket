@@ -39,14 +39,7 @@ Template.ConfirmBuy.events({
 		} else {
 			alert('Account unlock!!!');
 		}
-	    buyContractInstance.buyTicket(ticketWant, {from: account, value: web3.toWei(ticketWant*ticketPrice,"ether"), gas: 100000}, //function(error,log){
-//	    	if (!error) {
-//	    		var ticketBuyed = buyContractInstance.balanceOfTickets(account);	
-//	    		alert("Buy " + ticketBuyed + " ticket!");
-//	    	}
-
-	    //}
-	    );
+	    buyContractInstance.buyTicket(ticketWant, {from: account, value: web3.toWei(ticketWant*ticketPrice,"ether"), gas: 100000});
 	    buyContractInstance.MoneyTransfer({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		var ticketBuyed = buyContractInstance.balanceOfTickets(account);

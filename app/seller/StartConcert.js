@@ -5,7 +5,7 @@ Template.StartConcert.helpers({
 });
 
 Template.StartConcert.events({
-	'click .no': function(event){
+	'click .back': function(event){
 		event.preventDefault();
 	        BlazeLayout.render('mainLayout', {main: "YourExistingConcert"});
 	},
@@ -21,12 +21,11 @@ Template.StartConcert.events({
 		}
 
 		sellContractInstance.startConcert({},{from: account, gas: 100000});
-/*		sellContractInstance.StartConcert({},{address:account}).watch(function(error, log){
+		sellContractInstance.StartConcert({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		alert("You concert is " + log.args.stateName + " \n");
 	    	}
 	    });
-*/
 	},
 });
 

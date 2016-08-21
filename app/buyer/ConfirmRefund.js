@@ -20,12 +20,11 @@ Template.ConfirmRefund.events({
 		}
 
 		buyContractInstance.refund({},{from: account, gas: 100000});
-/*		buyContractInstance.Refund({},{address:account}).watch(function(error, log){
+		buyContractInstance.Refund({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		alert("You got " + log.args.refundAmount + "ether refund! \n");
 	    	}
 	    });
-*/
 	},
 });
 

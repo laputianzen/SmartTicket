@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
 ///apply seesion.get to get these infos
 Template.ConfirmSell.helpers({
+	hostName: function() {return Session.get('hostName')},
 	concertName: function(){return Session.get('concertName')},
 	concertPlace: function() {return Session.get('concertPlace')},
 	startTime: function(){return Session.get('startTime')},
@@ -9,7 +10,7 @@ Template.ConfirmSell.helpers({
 	ticketPrice: function(){return Session.get('ticketPrice')},
 	ticketAmount: function(){return Session.get('ticketAmount')},
 	supervisor: function(){return Session.get('supervisor')},
-	intro: function(){return Session.get('intro')},
+	extraInfo: function(){return Session.get('extraInfo')},
 })
 
 Template.ConfirmSell.events({
@@ -44,25 +45,25 @@ Template.ConfirmSell.events({
 			var gasEstimate = web3.eth.estimateGas({data: contractCode});
 			alert("This contract requires " + gasEstimate + " gas to deploy!!!");
 
-			var param1 = {} 
+			//var param1 = {} 
 
 	    	smartTicketContractInstance = smartTicketContractObject.new(Session.get('concertName'),Session.get('concertPlace'),
 	    		parseInt(Session.get('ticketPrice')),parseInt(Session.get('ticketAmount')),
 	    		
 	    		//timeBeforeWithdrawDeadlineInMinutes, timeBeforeStartTimeInMinutes, timeBeforeEndTimeInMinutes,
 	    		parseInt(Session.get('withdrawDeadline')), parseInt(Session.get('startTime')), parseInt(Session.get('endTime')),
-	    		Session.get('supervisor'),	
+	    		Session.get('supervisor'), Session.get('hostName'), Session.get('extraInfo'),	
 
 			//buyContract1Instance = buyContract1Object.new(['Test Contract','NTU',
 	    	//	2,50,500,1000,2000],
-	    		{from:web3.eth.accounts[0], data: contractCode, gas: gasEstimate+100000},function(error,contract){
+	    		{from:web3.eth.accounts[0], data: contractCode, gas: gasEstimate+200000},function(error,contract){
 	    			if(!error) {
 	    				if(!contract.address) {
 	    					alert("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
 
       					} else {
         					alert("Contract mined! Address: " + contract.address);
-        					console.log(contract);
+        					//console.log(contract);
       					}
 	    			} else {
 	    				alert(error);

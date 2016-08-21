@@ -56,7 +56,7 @@ Template.ConfirmWithdraw.events({
 	    			" ticket!\n You still have " + ticktetBuyed + " ticket! \n Get " + log.args.amount + " ether withdrawal\n");
 	    	}
 	    });
-
+		BazeLayout.render('mainLayout', {main: "Buyer"});
 	},
 });
 

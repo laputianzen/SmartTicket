@@ -28,16 +28,19 @@ Template.ConfirmEvent.events({
 		} else {
 			alert('Account unlock!!!');
 		}
-
-		superviseContractInstance.confirmEvent({},{from: account, gas: 100000});
-/*		superviseContractInstance.ConfirmEvent({},{address:account}).watch(function(error, log){
+		var confirmSignal = Session.get('confirmSignal');
+		superviseContractInstance.confirmEvent(confirmSignal,{from: account, gas: 100000});
+		superviseContractInstance.ConfirmEvent({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		var superviseContractAddress = superviseContractInstnace.address
-	    		alert("Event " + superviseContractAddress + " accepts your " + logs.arg.stateName
-	    		);
+	    		if (logs.arg.confirmSignal) {
+	    			alert("Event " + superviseContractAddress + ' accepts your "Confrimation"!');
+	    		}
+	    		else {
+	    			alert("Event " + superviseContractAddress + ' accepts your "Denial!"');
+	    		}
 	    	}
 	    });
-*/
 	},
 });
 

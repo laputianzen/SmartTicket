@@ -21,12 +21,11 @@ Template.CloseConcert.events({
 		}
 
 		sellContractInstance.closeConcert({},{from: account, gas: 100000});
-/*		sellContractInstance.CloseConcert({},{address:account}).watch(function(error, log){
+		sellContractInstance.CloseConcert({},{address:account}).watch(function(error, log){
 	    	if (!error) {
 	    		alert("You concert is " + log.args.stateName + " \n");
 	    	}
 	    });
-*/
 	},
 });
 

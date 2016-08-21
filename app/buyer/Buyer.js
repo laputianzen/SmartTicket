@@ -2,14 +2,14 @@ if (Meteor.isClient) {
 // Mumin hack
 Template.Buyer.helpers({
 	ConcertName: function() {return buyContractInstance.name()},
-	Host: function(){return 'No Stored in Smart Contract';},
+	Host: function(){return buyContractInstance.host();},
 	Place: function(){return buyContractInstance.place()},
 	WithDrawalDeadline: function(){return buyContractInstance.withDrawalDeadline()},
 	StartTime: function(){return buyContractInstance.startTime()},
 	EndTime: function(){return buyContractInstance.endTime()},
 	TicketPrice: function(){return buyContractInstance.ticketPrice()},
 	TicketAvailable: function(){return buyContractInstance.ticketSupply()},
-
+	ExtraInfo: function(){return buyContractInstance.extraInfo()},
 });
 
 Template.Buyer.events({
@@ -21,7 +21,7 @@ Template.Buyer.events({
 	    },
 	'click .useTicket': function(event){
 	    	event.preventDefault();
-	        BlazeLayout.render('mainLayout', {main: "ConfirmUseTicket"});
+	        BlazeLayout.render('mainLayout', {main: "UseTicket"});
 
 	    },   
 	'click .refund': function(event){
