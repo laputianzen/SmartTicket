@@ -30,6 +30,7 @@ Template.GetIncome.events({
 	    		"Your event is Inactive now.\n");
 	    	}
 	    });
+	    BlazeLayout.render('mainLayout', {main: "YourExistingConcert"});
 	},
 });
 

@@ -26,6 +26,7 @@ Template.CloseConcert.events({
 	    		alert("You concert is " + log.args.stateName + " \n");
 	    	}
 	    });
+	    BlazeLayout.render('mainLayout', {main: "YourExistingConcert"});
 	},
 });
 

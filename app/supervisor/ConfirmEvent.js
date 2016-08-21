@@ -20,7 +20,7 @@ Template.ConfirmEvent.events({
 	},
 	'submit form': function(event){
 	    event.preventDefault();	 
-	    var account = web3.eth.accounts[0];
+	    var account = web3.eth.accounts[3];
 	    var password = event.target.password.value;  
 
 	   	if(! web3.personal.unlockAccount(account,password)){
@@ -41,6 +41,7 @@ Template.ConfirmEvent.events({
 	    		}
 	    	}
 	    });
+	    BlazeLayout.render('mainLayout', {main: "Supervise"});
 	},
 });
 

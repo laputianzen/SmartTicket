@@ -11,7 +11,7 @@ Template.UseTicket.events({
 	},
 	'submit form': function(event){
 	    event.preventDefault();	 
-	    var account = web3.eth.accounts[0];
+	    var account = web3.eth.accounts[2];
 	    var password = event.target.password.value;  
 
 	   	if(! web3.personal.unlockAccount(account,password)){
@@ -26,6 +26,7 @@ Template.UseTicket.events({
 	    		alert("You have " + buyContractInstance.balanceOfTickets(account) + " ticket left. \n");
 	    	}
 	    });
+	    BlazeLayout.render('mainLayout', {main: "Buyer"});
 	},
 });
 

@@ -25,7 +25,7 @@ Template.ConfirmBuy.events({
 	},
 	'submit form': function(event){
 	    event.preventDefault();
-	    var account = web3.eth.accounts[0];
+	    var account = web3.eth.accounts[2];
 	    var password = event.target.password.value;
 	    //console.log(password);
 	    /////its two in this case 
